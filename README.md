@@ -12,7 +12,7 @@ Install spotipy (use **pip3 install spotipy**) <br >
 ### 3. Run the program <br >
 Run the program by using the terminal and navigating to the directory you cloned this repo into. Type in **python3 musicMove.py** to start the program. Follow the intended dirctions and BAM! Your Apple Music playlists are now Spotify playlists! <br >
 
-## Currect Issues
+## Current Issues
 ### API limit rate <br>
 Spotify does not like when you search for more than 99 songs at a time. At this time only playlist with less than 100 songs can be transfered over to Spotify. <br >
 
