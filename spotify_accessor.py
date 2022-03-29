@@ -1,7 +1,7 @@
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
 import spotipy.util as util
-
+import numpy as np
 
 # Spotify Token Access
 client_id = "87bd6563c97c44fdad3c04e3c2e3f07d"
@@ -85,6 +85,11 @@ def get_missing_track_id(missing_albums1, missing_tracks1):
         i += 1
     return my_array
 
+def add_more_than_100_songs_to_playlist(username, playlist_id, track_ids):
+    #split array in size of 50
+    track_id_chunks = np.array_split(track_ids, len(track_ids)/50)
+    for track_id_chunk in track_id_chunks:
+        add_songs_to_playlist(username, playlist_id, track_id_chunk)
 
 # Add songs to Spotify Playlist
 def add_songs_to_playlist(username, playlist_id, track_ids):
