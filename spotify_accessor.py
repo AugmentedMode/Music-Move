@@ -3,23 +3,13 @@ import spotipy
 import spotipy.util as util
 
 
+username = ""
+
 # Spotify Token Access
 client_id = "87bd6563c97c44fdad3c04e3c2e3f07d"
 client_secret = ""
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-
-
-# Get Spotify Username
-def get_username():
-    username = input('Enter Username: ')
-    print(username)
-    check = input('Is this your username? (Y/N): ')
-    if check.upper() == 'Y':
-        return username
-    else:
-        new_username = input('Reenter Username: ')
-        return new_username
 
 
 # Create Spotify playlist ID
