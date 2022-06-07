@@ -6,8 +6,12 @@ import spotipy.util as util
 username = ""
 
 # Spotify Token Access
-client_id = "87bd6563c97c44fdad3c04e3c2e3f07d"
+client_id = ""
 client_secret = ""
+if not client_id or not client_secret or not username:
+    print('ERROR: One of client_id, client_secret, or username is unset in spotify_accessor.py.')
+    exit(1)
+
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
