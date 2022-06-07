@@ -45,7 +45,11 @@ def get_track_id(song_name1, artist_name1, album_name1):
         artist = artist_name1[i]
         track = song_name1[i]
 
-        track_id = sp.search(q='artist:' + artist + ' track:' + track, type='track')
+        try:
+            track_id = sp.search(q='artist:' + artist + ' track:' + track, type='track')
+        except spotipy.exceptions.SpotifyException:
+            print(f'WARNING: Could not find "{track}" in Spotify.')
+            continue
         for songsID in track_id['tracks']['items']:
             id_list.append(songsID['id'])
         if not id_list:
