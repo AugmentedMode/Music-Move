@@ -4,7 +4,7 @@
  
 ## Usage
 ### 1. Export Apple Music playlists to XML File <br >
-The first step is to select the playlist you want to import over and export it as an XML file. You do this buy selecting File -> Library -> Export Playlist. Save the resulting file as whatever you would like in the same directory as the directory you cloned this repo into. <br>
+The first step is to select the playlist you want to import over and export it as an XML file. You do this by selecting File -> Library -> Export Playlist. Save the resulting file as whatever you would like in the same directory as the directory you cloned this repo into. <br>
 
 ### 2. Install dependencies <br >
 Install spotipy (use **pip3 install spotipy**) <br >
