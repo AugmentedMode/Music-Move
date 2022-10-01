@@ -9,7 +9,13 @@ The first step is to select the playlist you want to import over and export it a
 ### 2. Install dependencies <br >
 Install spotipy (use **pip3 install spotipy**) <br >
 
-### 3. Run the program <br >
+### 3. 
+Create a Spotify app at the [spotify develper dashborad](https://developer.spotify.com/dashboard/applications) and set redirect url to `http://localhost:8888/callback`
+- Create WebApp
+- Edit Settings
+- Redirect URIs -> http://localhost:8888/callback -> Add -> Save
+- Go to spotify_accessor.py and set Client ID and Client Secret from new created app
+### 4. Run the program <br >
 Run the program by using the terminal and navigating to the directory you cloned this repo into. Type in **python3 musicMove.py** to start the program. Follow the intended dirctions and BAM! Your Apple Music playlists are now Spotify playlists! <br >
 
 ## Current Issues
