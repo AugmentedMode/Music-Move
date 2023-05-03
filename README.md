@@ -21,6 +21,7 @@ Install spotipy (use **pip3 install spotipy**) <br >
 9. Copy the value of **Username** to the `username` variable in [spotify_accessor.py](./spotify_accessor.py).
 10. Save the edited file.
 
+
 ### 4. Run the program <br >
 Run the program by using the terminal and navigating to the directory you cloned this repo into. Type in **python3 musicMove.py** to start the program. Follow the intended dirctions and BAM! Your Apple Music playlists are now Spotify playlists! <br >
 
