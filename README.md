@@ -4,10 +4,15 @@
  
 ## Usage
 ### 1. Export Apple Music playlists to XML File <br >
-The first step is to select the playlist you want to import over and export it as an XML file. You do this buy selecting File -> Library -> Export Playlist. Save the resulting file as whatever you would like in the same directory as the directory you cloned this repo into. <br>
+The first step is to select the playlists you want to import over and export them as an XML file. You do this buy selecting File -> Library -> Export Playlist. Save the resulting file as whatever you would like in the same directory as the directory you cloned this repo into.
+
+Running the program will create playlists on spotify with the same names as the file names of the exported playlists (c.f Step 1).
+ <br>
 
 ### 2. Install dependencies <br >
 Install spotipy (use **pip3 install spotipy**) <br >
+Install numpy (use **pip3 install numpy**) <br >
+Install python-dotenv (use **pip3 install python-dotenv**) <br >
 
 ### 3. Configure Spotify developer application and variables
 1. Go to https://developer.spotify.com/dashboard/applications.
@@ -15,15 +20,15 @@ Install spotipy (use **pip3 install spotipy**) <br >
 3. Select the app.
 4. Select **EDIT SETTINGS**.
 5. Under **Redirect URIs**, enter `http://localhost:8888/callback` and select **Add**. Select **SAVE**.
-6. Find **Client ID** and copy the value to the `client_id` variable in [spotify_accessor.py](./spotify_accessor.py).
-7. Select **SHOW CLIENT SECRET**. Copy the value to the `client_secret` variable in [spotify_accessor.py](./spotify_accessor.py).
+6. Find **Client ID** and copy the value to the `client_id` variable in [.env](./.env).
+7. Select **SHOW CLIENT SECRET**. Copy the value to the `client_secret` variable in [.env](./.env).
 8. Go to https://spotify.com > **Profile** > **Account**.
-9. Copy the value of **Username** to the `username` variable in [spotify_accessor.py](./spotify_accessor.py).
+9. Copy the value of **Username** to the `username` variable in [.env](./.env).
 10. Save the edited file.
 
 
 ### 4. Run the program <br >
-Run the program by using the terminal and navigating to the directory you cloned this repo into. Type in **python3 musicMove.py** to start the program. Follow the intended dirctions and BAM! Your Apple Music playlists are now Spotify playlists! <br >
+By using the terminal and navigating to the directory you cloned this repo into. Type in **python3 musicMove.py** to start the program. Follow the intended dirctions and BAM! Your Apple Music playlists are now Spotify playlists! <br >
 
 ## Current Issues
 ### Missing Songs <br >

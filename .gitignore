@@ -1,2 +1,5 @@
 *.xml
 *.pyc
+*.env.perso
+.cache*
+__pycache*

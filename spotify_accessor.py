@@ -2,12 +2,15 @@ from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
 import spotipy.util as util
 import numpy as np
-
-username = ""
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 # Spotify Token Access
-client_id = ""
-client_secret = ""
+username = os.getenv("USERNAME")
+client_id = os.getenv("CLIENT_ID")
+client_secret = os.getenv("CLIENT_SECRET")
+
 if not client_id or not client_secret or not username:
     print('ERROR: One of client_id, client_secret, or username is unset in spotify_accessor.py.')
     exit(1)
@@ -17,11 +20,8 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 
 # Create Spotify playlist ID
-def create_playlist(username):
-
+def create_playlist(username, playlist_name):
     username = username
-    playlist_name = input('Enter playlist name: ')
-
     token = util.prompt_for_user_token(username=username, scope='playlist-modify-public', client_id=client_id,
                                        client_secret=client_secret, redirect_uri="http://localhost:8888/callback")
 
@@ -85,9 +85,12 @@ def get_missing_track_id(missing_albums1, missing_tracks1):
 
 def add_more_than_100_songs_to_playlist(username, playlist_id, track_ids):
     #split array in size of 50
-    track_id_chunks = np.array_split(track_ids, len(track_ids)/50)
-    for track_id_chunk in track_id_chunks:
-        add_songs_to_playlist(username, playlist_id, track_id_chunk)
+    if(len(track_ids) > 50) :
+        track_id_chunks = np.array_split(track_ids, len(track_ids)/50)
+        for track_id_chunk in track_id_chunks:
+            add_songs_to_playlist(username, playlist_id, track_id_chunk)
+    else :
+        add_songs_to_playlist(username, playlist_id, track_ids)
 
 # Add songs to Spotify Playlist
 def add_songs_to_playlist(username, playlist_id, track_ids):
