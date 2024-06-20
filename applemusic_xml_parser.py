@@ -2,9 +2,15 @@ import xml.etree.ElementTree as ET
 
 # Setup tree and root to parse
 print('Welcome to Music Move!\n')
-playlist = input('Enter the XML file name: ') + '.xml'
-tree = ET.parse(playlist)
-root = tree.getroot()
+
+tree = 0
+root = 0
+
+def set_file(playlist):
+    global tree
+    global root
+    tree = ET.parse(playlist + ".xml")
+    root = tree.getroot()
 
 
 # Finds the name of the song
